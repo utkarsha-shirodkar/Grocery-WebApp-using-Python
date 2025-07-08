@@ -12,7 +12,31 @@ Download mysql for windows: https://dev.mysql.com/downloads/installer/
 
 `pip install mysql-connector-python`
 
-### Exercise 
+### Database Setup
+
+1.  **Install MySQL**: Download and install MySQL from [https://dev.mysql.com/downloads/installer/](https://dev.mysql.com/downloads/installer/).
+2.  **Create Database**: Create a database named `grocery_store`. You can do this using a MySQL client (like MySQL Workbench or the command line client) with the following command:
+    ```sql
+    CREATE DATABASE grocery_store;
+    ```
+3.  **User Permissions**: The application connects to MySQL using the username `root` and password `root` (as configured in `backend/sql_connection.py`). Ensure this user exists and has the necessary permissions on the `grocery_store` database. **Note:** For a production environment, it is strongly recommended to create a dedicated user with restricted permissions and use a more secure password management strategy.
+
+### Running the Application
+
+1.  **Install Dependencies**:
+    ```bash
+    pip install Flask mysql-connector-python
+    ```
+2.  **Start the Backend Server**:
+    Navigate to the project's root directory in your terminal and run:
+    ```bash
+    python backend/server.py
+    ```
+    The server will start on `http://127.0.0.1:5000`.
+3.  **Access the Frontend**:
+    Open the `ui/index.html` file in your web browser.
+
+### Exercise
 
 The grocery management system that we built is functional but after we give it to users for use, we got following feedback. The exercise for you to address this feedback and implement these features in the application,
 1. **Products Module**: In products page that lists current products, add an edit button next to delete button that allows to edit current product
